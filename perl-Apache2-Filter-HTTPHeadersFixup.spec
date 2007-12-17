@@ -13,7 +13,6 @@ BuildRequires:	apache-mod_perl
 BuildRequires:  apache-mod_perl-devel
 BuildRequires:	perl(Apache::Test) >= 1.25
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Apache2::Filter::HTTPHeadersFixup is a super class which provides an
