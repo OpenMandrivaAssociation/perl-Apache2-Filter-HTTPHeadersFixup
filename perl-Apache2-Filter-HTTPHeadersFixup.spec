@@ -1,22 +1,22 @@
 %define upstream_name       Apache2-Filter-HTTPHeadersFixup
 %define upstream_version    0.06
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
 Summary:	Manipulate Apache 2 HTTP Headers
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	apache-mod_perl
 BuildRequires:  apache-mod_perl-devel
+BuildRequires:	perl-devel
 BuildRequires:	perl(Apache::Test) >= 1.25
 
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Apache2::Filter::HTTPHeadersFixup is a super class which provides an
@@ -32,21 +32,17 @@ This class cannot be used as is. It has to be sub-classed.
 %setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%make test
+#make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc Changes
 %{perl_vendorlib}/Apache2/Filter/HTTPHeadersFixup.pm
 %{_mandir}/*/*
+
