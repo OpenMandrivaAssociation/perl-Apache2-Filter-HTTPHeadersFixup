@@ -1,15 +1,13 @@
 %define upstream_name       Apache2-Filter-HTTPHeadersFixup
-%define upstream_version    0.06
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	0.06
+Release:	6
 
 Summary:	Manipulate Apache 2 HTTP Headers
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	apache-mod_perl
@@ -30,7 +28,7 @@ It supports KeepAlive connections.
 This class cannot be used as is. It has to be sub-classed.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
