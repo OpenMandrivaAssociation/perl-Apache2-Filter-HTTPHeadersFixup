@@ -1,13 +1,14 @@
 %define upstream_name       Apache2-Filter-HTTPHeadersFixup
+%define upstream_version 0.06
 Name:		perl-%{upstream_name}
 Version:	0.06
-Release:	6
+Release:	1
 
 Summary:	Manipulate Apache 2 HTTP Headers
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/P/PG/PGOLLUCCI/Apache2-Filter-HTTPHeadersFixup-0.06.tar.gz
 
 BuildRequires:	make
 BuildRequires:	apache-mod_perl
